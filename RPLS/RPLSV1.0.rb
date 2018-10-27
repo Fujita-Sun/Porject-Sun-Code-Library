@@ -19,4 +19,10 @@ pcfls.each{|fl|
    if tasaoasao(strhash(data[2],check[3],check[4]),check[2]) != check[1]
       return false
    end
+   begin
+      eval(data[2])
+   rescue
+      msgbox "插件发生#{$!}错误，内容如下：\n#{$!.to_s}"
+      return false
+   end
 }
